@@ -18,7 +18,7 @@ These files contain all dependencies bundled into one file using [pyinstaller](h
 
 ## Windows
 
-[DOWNLOAD](https://github.com/kacpertopol/one_cam_board/releases/download/0.1/cam_board.exe)
+[DOWNLOAD](https://github.com/kacpertopol/one_cam_board/releases/download/0.1/camBoard.exe)
 
 # USAGE
 
