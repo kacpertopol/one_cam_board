@@ -73,17 +73,9 @@ for reference.
   at the bottom of the printable area
 - manipulating the position of the laptop might damage it, be careful :-)
 
-## Python version error
-
-In some linux distributions python 3 is the default. If that is not the case on your system you can:
-- adjust the first, hashbang, line of *cam_board* or ...
-- ... run through python 3:
-```
-<user> $ python3 ./cam_board
-```
-
 # MISCELLANEOUS 
 
 - ArUco markers made using [this](https://chev.me/arucogen/)
 - This is a simple script bodged togather from various opencv tutorials, [here](https://docs.opencv.org/master/d9/df8/tutorial_root.html) is a good place to start
 - Sharpening kernel see [wiki](https://en.wikipedia.org/wiki/Kernel_(image_processing)) and [this](https://www.codingame.com/playgrounds/2524/basic-image-manipulation/filtering)
+- Executables bundled with dependencies using [pyinstaller](https://www.pyinstaller.org/)
