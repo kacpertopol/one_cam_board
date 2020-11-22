@@ -6,14 +6,20 @@ over the whole screen.
 
 ![](demo.gif)
 
-# REQUIREMENTS
+# DOWNLOAD
 
-- python 3
-- opencv, numpy
+Below are links to download the operating system specific executables.
+These files contain all dependencies bundled into one file using [pyinstaller](https://www.pyinstaller.org/).
+
+## Linux
+
+[DOWNLOAD](https://github.com/kacpertopol/one_cam_board/releases/download/0.1/camBoard)
+
+## Windows
+
+[DOWNLOAD](https://github.com/kacpertopol/one_cam_board/releases/download/0.1/cam_board.exe)
 
 # USAGE
-
-Operating system specific executables are inside the *linux* and *windows* directories.
 
 ## Prepare paper
 
