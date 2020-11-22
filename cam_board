@@ -1,53 +1,46 @@
 #!/usr/bin/env python
 
-import argparse
-import configparser
 import cv2
 import os
 import numpy
 
+class args:
+    invert = False
+    denoise = False
+    fullscreen = True
+    kernel = False
+
+    warp = False
+    camera = 0
+    path = None
+    
+    blockSize = 11
+    C = 2
+    buff = 20
+
+    frac = 0.3
+    threshold1_v = 0
+    threshold2_v = 255
+
+
+
 if(__name__ == "__main__"):
-
-    # parsing command line arguments {
-
-    parser = argparse.ArgumentParser(description = "Filter web cam image to look like a white/black board. Hot keys: q (quit).")
-    parser.add_argument("--invert" , "-i" , action = "store_true" , help = "Invert colors.")
-    parser.add_argument("--denoise" , "-d" , action = "store_true" , help = "Denoise.")
-    parser.add_argument("--fullscreen" , "-f" , action = "store_true" , help = "Full screen.")
-    parser.add_argument("--warp" , "-w" , action = "store_true" , help = "Don't warp image to writable area.")
-    parser.add_argument("--kernel" , "-k" , action = "store_true" , help = "Apply sharpening kernel to image.")
-    parser.add_argument("--out" , "-o" , action = "store_true" , help = "QR code outside of writable area.")
-    parser.add_argument("--camera" , "-c" , help = "Provide integer to change the camera number, by default this value is 0.")
-    parser.add_argument("--path" , "-p" , help = "Path to directory where frames will be saved. By default this is the current directory.")
-    args = parser.parse_args() 
 
     save_dir = os.getcwd()
     if(args.path != None):
         save_dir = args.path
 
-    # } parsing command line arguments
+    # configuration {
 
+    blockSize = args.blockSize 
+    C = args.C
+    buff = args.buff
 
-    # script directory {
+    frac = args.frac 
+    threshold1_v = args.threshold1_v 
+    threshold2_v = args.threshold2_v 
 
-    script_path = os.path.dirname(os.path.realpath(__file__))
-
-    # } script directory
-
-    # reading configuration file {
-
-    config = configparser.ConfigParser()
-    config.read(os.path.join(script_path , "aruco_cam_config"))
-   
-    blockSize = int(config["adaptiveThreshold"]["blockSize"])
-    C = int(config["adaptiveThreshold"]["C"])
-    buff = int(config["perspectiveMatrix"]["buffer"])
-
-    frac = float(config["fraction"]["frac"])
-    threshold1_v = float(config["OTSU"]["threshold1"])
-    threshold2_v = float(config["OTSU"]["threshold2"])
-
-    # } reading configuration file
+    # } configuration
 
     # getting camera {
     if(args.camera == None):
@@ -72,6 +65,8 @@ if(__name__ == "__main__"):
         got_points = False
         # points surrounfing the QR code
         pointsglob = None
+        # timer to show message
+        timer = 0
 
         m_list = []
 
@@ -151,6 +146,10 @@ if(__name__ == "__main__"):
             if(args.invert):
                 warped = cv2.bitwise_not(warped)
 
+            if(timer < 100):
+                warped = cv2.putText(warped , "   [" + str(100-timer).zfill(3) + "] HIT:q(quit),k(sharpening kernel on/off),i(invert on/off),s(save frame)" , (0 , int(0.5 * warped.shape[0])) , cv2.FONT_HERSHEY_PLAIN , 1 , (0 , 0 , 255) , 1)
+                timer += 1
+            
             # Display the resulting frame
             cv2.imshow('frame',warped)
 
@@ -165,9 +164,14 @@ if(__name__ == "__main__"):
                         if(int(f[:-4]) > maxPng):
                             maxPng = int(f[:-4])
                 cv2.imwrite(os.path.join(save_dir , str(maxPng + 1).zfill(4) + ".png") , tosave)
+            elif(key == ord('i')):
+                args.invert = not args.invert
+            elif(key == ord('k')):
+                args.kernel = not args.kernel
+            elif(ord('a') <= key <= ord('z')):
+                timer = 0
 
-
-        # } main loop
+# } main loop
 
     finally:
 

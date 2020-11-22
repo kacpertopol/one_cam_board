@@ -13,6 +13,8 @@ over the whole screen.
 
 # USAGE
 
+Operating system specific executables are inside the *linux* and *windows* directories.
+
 ## Prepare paper
 
 Print **to_print/a4.pdf** or **to_print/a4.svg**
@@ -30,50 +32,14 @@ Tilt your web cam so that all 4 ARUCO markers are in it's field of view.
 Disable the camera in these programs first, before running the script.
 Otherwise a "camera busy" error will be thrown.
 
-
-## Run cam_board
-
-In the terminal navigate to the **cam_board** directory.
-
-- To launch the script:
-```
-<USER> $ ./cam_board 
-```
-- To run in full screen mode:
-```
-<USER> $ ./cam_board -f
-```
-- To run in full screen mode and invert colors:
-```
-<USER> $ ./cam_board -fi
-```
-- To run in full screen mode, invert colors and apply sharpening kernel:
-```
-<USER> $ ./cam_board -fki
-```
-- To run in full screen mode and white board mode:
-```
-<USER> $ ./cam_board -fd
-```
-- To run in black board mode:
-```
-<USER> $ ./cam_board -di
-```
-- To display command line options:
-```
-<USER> $ ./cam_board -h
-```
-
 ## Key bindings
 
 - "q" - quit
+- "k" - turn sharpening kernel on/off
+- "i" - turn color inversion on/off
 - "s" - save screen to PNG files to create slide show
   - the names are chosen automatically **0001.png**, **0002.png**, ...
   - by default the files are saved in the current working directory
-
-## Adjust the configuration file
-
-Edit **aruco_cam_config** to change settings. 
 
 ## Custom page
 
