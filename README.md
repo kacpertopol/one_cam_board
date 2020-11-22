@@ -8,7 +8,8 @@ over the whole screen.
 
 # DOWNLOAD
 
-Below are links to download the operating system specific executables.
+Below are links to download the operating system specific executables
+from [release](https://github.com/kacpertopol/one_cam_board/releases/tag/0.1).
 These files contain all dependencies bundled into one file using [pyinstaller](https://www.pyinstaller.org/).
 
 ## Linux
