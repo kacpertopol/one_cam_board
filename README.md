@@ -11,7 +11,7 @@ over the whole screen.
 Below are links to download the operating system specific executables
 from [release](https://github.com/kacpertopol/one_cam_board/releases/tag/0.1).
 These files contain all dependencies bundled into one file using [pyinstaller](https://www.pyinstaller.org/).
-This release is experimental, use at your own risk :-) If you decide to try I would be very happy to read your feedback.
+This release is experimental, use at your own risk :-) If you decide to try I would be very happy to read your feedback!
 
 ## Linux
 
