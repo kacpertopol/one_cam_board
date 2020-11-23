@@ -24,7 +24,7 @@ These files contain all dependencies bundled into one file using [pyinstaller](h
 
 ## Prepare paper
 
-Print **to_print/a4.pdf** or **to_print/a4.svg**
+Print [**to_print/a4.pdf**](https://github.com/kacpertopol/one_cam_board/releases/download/0.1/a4.pdf) or **to_print/a4.svg**
 on A4 paper. The small circle marks
 the top left part of the page.
 If the aspect ratio of your web cam is different
