@@ -16,7 +16,7 @@ Please post your comments in the [issues](https://github.com/kacpertopol/one_cam
 
 ## Linux
 
-[DOWNLOAD](https://github.com/kacpertopol/one_cam_board/releases/download/0.1/camBoard)
+[DOWNLOAD](https://github.com/kacpertopol/one_cam_board/releases/download/0.1/camBoard) (use `chmod +x camBoard` to give it permission to execute)
 
 ## Windows
 
