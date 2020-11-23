@@ -33,11 +33,12 @@ see [setting up page with markers](#custom-page)
 
 ## Setup web cam 
 
-Tilt your web cam so that all 4 ARUCO markers are in it's field of view.
-
-**IMPORTANT**: To use the script with *Zoom*, *Skype*, *MS Teams*, ...
-Disable the camera in these programs first, before running the script.
-Otherwise a "camera busy" error will be thrown.
+- run *Zoom*, *Skype*, *MS Teams*, ... (**IMPORTANT**: to use *camBoard* with these programms
+  disable the camera in them first - 
+  otherwise a "camera busy" error will be thrown)
+- share screen 
+- run *camBoard* on the screen that is being shared, the application will go full screen
+- tilt your web cam so that all 4 ARUCO markers are in it's field of view
 
 ## Key bindings
 
