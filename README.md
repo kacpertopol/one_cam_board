@@ -36,7 +36,7 @@ see [setting up page with markers](#custom-page)
 - run *Zoom*, *Skype*, *MS Teams*, ... (**IMPORTANT**: to use *camBoard* with these programms
   disable the camera in them first - 
   otherwise a "camera busy" error will be thrown)
-- share screen 
+- share screen in *Zoom*, *Skype*, *MS Teams*, ...
 - run *camBoard* on the screen that is being shared, the application will go full screen
 - tilt your web cam so that all 4 ARUCO markers are in it's field of view
 
